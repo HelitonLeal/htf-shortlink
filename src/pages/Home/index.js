@@ -7,6 +7,7 @@ import Menu from '../../components/Menu';
 import Modal from '../../components/Modal';
 
 import api from '../../services/api';
+import { saveLink } from '../../services/storeLinks';
 
 export default function Home(){
 
@@ -22,6 +23,8 @@ export default function Home(){
 
             setData(response.data);
             setShowModal(true);
+
+            saveLink('@shortLink', response.data);
 
             setLink('');
 
